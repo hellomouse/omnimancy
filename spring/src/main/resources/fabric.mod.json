@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "omnimancy-spring",
+  "version": "${version}",
+  "name": "Omnimancy: Spring support",
+  "description": "Integrating Spring Boot into Minecraft for easier mod development",
+  "authors": [
+    "handicraftsman from hellomouse"
+  ],
+  "contact": {
+    "homepage": "https://github.com/hellomouse/omnimancy",
+    "sources": "https://github.com/hellomouse/omnimancy"
+  },
+  "license": "MIT",
+  "icon": "assets/modid/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.hellomouse.omnimancy.spring.OmnimancySpringMod"
+    ],
+    "client": [
+      "net.hellomouse.omnimancy.bundle.client.OmnimancySpringClientMod"
+    ]
+  },
+  "mixins": [
+    "omnimancy-spring.mixins.json",
+    {
+      "config": "omnimancy-spring.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "~1.20",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+  }
+}

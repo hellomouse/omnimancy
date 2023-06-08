@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "omnimancy-bundle",
+  "version": "${version}",
+  "name": "Omnimancy: Mod bundle",
+  "description": "Bundling all of the mods together",
+  "authors": [
+    "handicraftsman from hellomouse"
+  ],
+  "contact": {
+    "homepage": "https://github.com/hellomouse/omnimancy",
+    "sources": "https://github.com/hellomouse/omnimancy"
+  },
+  "license": "MIT",
+  "icon": "assets/modid/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.hellomouse.omnimancy.bundle.OmnimancyBundleMod"
+    ],
+    "client": [
+      "net.hellomouse.omnimancy.bundle.client.OmnimancyBundleClientMod"
+    ]
+  },
+  "mixins": [
+    "omnimancy-bundle.mixins.json",
+    {
+      "config": "omnimancy-bundle.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "~1.20",
+    "java": ">=17",
+    "fabric-api": "*",
+    "omnimancy-spring": "=${version}"
+  },
+  "suggests": {
+  }
+}
