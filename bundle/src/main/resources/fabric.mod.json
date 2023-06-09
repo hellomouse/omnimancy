@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "omnimancy-bundle",
   "version": "${version}",
-  "name": "Omnimancy: Mod bundle",
+  "name": "Omnimancy",
   "description": "Bundling all of the mods together",
   "authors": [
     "handicraftsman from hellomouse"

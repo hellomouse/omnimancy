@@ -19,7 +19,13 @@
       "net.hellomouse.omnimancy.spring.OmnimancySpringMod"
     ],
     "client": [
-      "net.hellomouse.omnimancy.bundle.client.OmnimancySpringClientMod"
+      "net.hellomouse.omnimancy.spring.client.OmnimancySpringClientMod"
+    ],
+    "server": [
+      "net.hellomouse.omnimancy.spring.OmnimancySpringServerMod"
+    ],
+    "preLaunch": [
+      "net.hellomouse.omnimancy.spring.OmninimancySpringPreLaunch"
     ]
   },
   "mixins": [
