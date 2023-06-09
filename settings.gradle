@@ -13,4 +13,6 @@ pluginManagement {
 }
 
 include ":spring"
+include ":books"
+include ":auramanip"
 include ":bundle"

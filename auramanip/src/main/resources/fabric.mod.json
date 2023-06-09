@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "omnimancy-bundle",
+  "id": "omnimancy-auramanip",
   "version": "${version}",
-  "name": "Omnimancy",
-  "description": "A magic overhaul mod(pack) for Minecraft",
+  "name": "Omnimancy: Aura Manipulation",
+  "description": "An aura engine for Omnimancy",
   "authors": [
     "handicraftsman from hellomouse"
   ],
@@ -14,28 +14,16 @@
   "license": "MIT",
   "icon": "assets/modid/icon.png",
   "environment": "*",
-  "entrypoints": {
-    "main": [
-      "net.hellomouse.omnimancy.bundle.OmnimancyBundleMod"
-    ],
-    "client": [
-      "net.hellomouse.omnimancy.bundle.client.OmnimancyBundleClientMod"
-    ]
-  },
-  "mixins": [
-    "omnimancy-bundle.mixins.json",
-    {
-      "config": "omnimancy-bundle.client.mixins.json",
-      "environment": "client"
-    }
-  ],
+  "entrypoints": {},
+  "mixins": [],
   "depends": {
     "fabricloader": ">=0.14.21",
     "minecraft": "~1.20",
     "java": ">=17",
     "fabric-api": "*",
     "omnimancy-spring": "=${version}",
-    "omnimancy-books": "=${version}"
+    "omnimancy-books": "=${version}",
+    "owo": ">=0.11.0+1.20"
   },
   "suggests": {
   }

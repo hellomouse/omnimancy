@@ -7,20 +7,16 @@ version = project.omnimancy_version
 group = project.omnimancy_group
 
 base {
-    archivesName = "${project.omnimancy_base_name}-bundle"
+    archivesName = "${project.omnimancy_base_name}-auramanip"
 }
 
-repositories {
-    maven {
-        url "https://maven.terraformersmc.com/releases/"
-    }
-}
+repositories {}
 
 loom {
     splitEnvironmentSourceSets()
 
     mods {
-        "${project.omnimancy_base_modid}-bundle" {
+        "${project.omnimancy_base_modid}-auramanip" {
             sourceSet sourceSets.main
             sourceSet sourceSets.client
         }
@@ -35,18 +31,8 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modRuntimeOnly "com.terraformersmc:modmenu:7.0.1"
-
-    var includeProject = (String name) -> {
-        include project(name)
-        implementation project(path: name, configuration: "namedElements")
-    }
-
-    [
-            ":spring",
-            ":books",
-            ":auramanip",
-    ].forEach(includeProject)
+    implementation project(path: ":spring", configuration: "namedElements")
+    implementation project(path: ":books", configuration: "namedElements")
 }
 
 processResources {
@@ -70,7 +56,7 @@ java {
 
 jar {
     from(rootProject.file("icon.png")) {
-        rename { "META-INF/assets/omnimancy-bundle/${it}" }
+        rename { "META-INF/assets/omnimancy-auramanip/${it}" }
     }
 
     from(rootProject.file("LICENSE")) {
