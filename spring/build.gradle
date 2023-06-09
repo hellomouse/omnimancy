@@ -18,8 +18,7 @@ repositories {
 }
 
 configurations {
-    depInclude {
-    }
+    depInclude
 }
 
 loom {
@@ -41,7 +40,7 @@ dependencies {
 
     modApi "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation depInclude("org.springframework.boot:spring-boot-starter:3.1.0") {
+    modApi depInclude("org.springframework.boot:spring-boot-starter:3.1.0") {
         exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
     }
 }
