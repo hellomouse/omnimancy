@@ -33,9 +33,9 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    include project(":spring")
-    implementation project(path: ":spring", configuration: "namedElements")
+    api project(path: ":base", configuration: "namedElements")
 
+    // We need to import these two here as well, because of how interface injection works
     modApi "io.wispforest:owo-lib:${project.owo_version}"
     annotationProcessor "io.wispforest:owo-lib:${project.owo_version}"
 }

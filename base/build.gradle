@@ -7,20 +7,18 @@ version = project.omnimancy_version
 group = project.omnimancy_group
 
 base {
-    archivesName = "${project.omnimancy_base_name}-bundle"
+    archivesName = "${project.omnimancy_base_name}-base"
 }
 
 repositories {
-    maven {
-        url "https://maven.terraformersmc.com/releases/"
-    }
+    maven { url 'https://maven.wispforest.io' }
 }
 
 loom {
     splitEnvironmentSourceSets()
 
     mods {
-        "${project.omnimancy_base_modid}-bundle" {
+        "${project.omnimancy_base_modid}-base" {
             sourceSet sourceSets.main
             sourceSet sourceSets.client
         }
@@ -35,19 +33,13 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modRuntimeOnly "com.terraformersmc:modmenu:7.0.1"
+    include project(":spring")
+    api project(path: ":spring", configuration: "namedElements")
 
-    var includeProject = (String name) -> {
-        include project(name)
-        api project(path: name, configuration: "namedElements")
-    }
+    modApi "io.wispforest:owo-lib:${project.owo_version}"
+    annotationProcessor "io.wispforest:owo-lib:${project.owo_version}"
 
-    [
-            ":spring",
-            ":books",
-            ":auramanip",
-            ":base",
-    ].forEach(includeProject)
+    modApi "io.wispforest:lavender:${project.lavender_version}"
 }
 
 processResources {
@@ -71,7 +63,7 @@ java {
 
 jar {
     from(rootProject.file("icon.png")) {
-        rename { "META-INF/assets/omnimancy-bundle/${it}" }
+        rename { "META-INF/assets/omnimancy-base/${it}" }
     }
 
     from(rootProject.file("LICENSE")) {

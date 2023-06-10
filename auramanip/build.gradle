@@ -31,8 +31,11 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    implementation project(path: ":spring", configuration: "namedElements")
-    implementation project(path: ":books", configuration: "namedElements")
+    api project(path: ":base", configuration: "namedElements")
+    api project(path: ":books", configuration: "namedElements")
+
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
 }
 
 processResources {

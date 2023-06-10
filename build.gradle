@@ -1,0 +1,17 @@
+var omProjects = [
+    ":bundle",
+    ":spring",
+    ":books",
+    ":auramanip",
+    ":base"
+]
+
+subprojects {
+    getTasksByName("genCommonSourcesWithCfr", false).forEach { Task task ->
+        omProjects.forEach { String path ->
+            if (project.path != path) {
+                task.dependsOn project(path).getTasksByName("unpickCommonJar", false)
+            }
+        }
+    }
+}

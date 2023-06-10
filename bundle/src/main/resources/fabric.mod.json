@@ -35,7 +35,9 @@
     "java": ">=17",
     "fabric-api": "*",
     "omnimancy-spring": "=${version}",
-    "omnimancy-books": "=${version}"
+    "omnimancy-books": "=${version}",
+    "omnimancy-auramanip": "=${version}",
+    "omnimancy-base": "=${version}"
   },
   "suggests": {
   }

@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "net.hellomouse.omnimancy.auramanip.client.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "EntityAuraMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

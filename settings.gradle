@@ -15,4 +15,5 @@ pluginManagement {
 include ":spring"
 include ":books"
 include ":auramanip"
+include ":base"
 include ":bundle"
